@@ -6,11 +6,12 @@
   --accent: hsl(281, 83%, 54%);
 
   --radius: 1rem;
-
   --transition: 0.3s ease;
 
-  /* NEW */
   --shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+
+  /* NEW */
+  --border-light: 1px solid #eee;
 }
 
 * {
@@ -81,7 +82,7 @@ h1 {
 .faq-item {
   padding-block: clamp(1rem, 2vw, 1.5rem);
 
-  border-block-end: 1px solid #eee;
+  border-block-end: var(--border-light);
 }
 
 .faq-item:last-child {
@@ -142,7 +143,7 @@ h1 {
 }
 
 .faq-answer {
-  padding-block-start: 1rem;
+  padding-block-start: clamp(1rem, 2vw, 1.25rem);
 }
 
 .faq-answer p {
