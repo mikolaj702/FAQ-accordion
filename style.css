@@ -1,0 +1,161 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --gray-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --accent: hsl(281, 83%, 54%);
+
+  --radius: 1rem;
+
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-block-size: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: clamp(1rem, 3vw, 2rem);
+
+  font-family: Arial, sans-serif;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--dark-purple) 35%,
+      var(--light-pink) 35%
+    );
+
+  color: var(--dark-purple);
+}
+
+.main-content {
+  inline-size: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.faq-card {
+  inline-size: min(100%, 37.5rem);
+
+  background-color: var(--white);
+
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+
+  border-radius: var(--radius);
+
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-block-end: clamp(1.5rem, 3vw, 2rem);
+}
+
+.star {
+  color: var(--accent);
+
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.faq-item {
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+
+  border-block-end: 1px solid #eee;
+}
+
+.faq-item:last-child {
+  border-block-end: none;
+}
+
+.faq-question {
+  inline-size: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  text-align: start;
+
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 700;
+
+  color: var(--dark-purple);
+
+  transition: color var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--accent);
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+.icon {
+  inline-size: 2rem;
+  block-size: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background-color: var(--accent);
+
+  color: var(--white);
+
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  padding-block-start: 1rem;
+}
+
+.faq-answer p {
+  color: var(--gray-purple);
+
+  line-height: 1.7;
+
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none;
+    animation: none;
+    scroll-behavior: auto;
+  }
+}
